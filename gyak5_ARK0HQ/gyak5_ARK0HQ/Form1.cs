@@ -10,20 +10,30 @@ using System.Windows.Forms;
 
 namespace gyak5_ARK0HQ
 {
+    using Excel = Microsoft.Office.Interop.Excel;
+    using System.Reflection;
     public partial class Form1 : Form
     {
         RealEstateEntities context = new RealEstateEntities();
         List<Flat> Flats;
+        Excel.Application xlApp; 
+        Excel.Workbook xlWB; 
+        Excel.Worksheet xlSheet; 
+
+
 
         public Form1()
         {
             InitializeComponent();
             LoadData();
+
+           
         }
 
         private void LoadData()
         {
             Flats = context.Flats.ToList();
+            
         }
     }
 }
