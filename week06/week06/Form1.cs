@@ -20,6 +20,12 @@ namespace week06
         
         public Form1()
         {
+            RefreshData();
+        }
+
+        private void RefreshData()
+        {
+            Rates.Clear();
             InitializeComponent();
             GetExchangeRates();
             GetData();
@@ -34,9 +40,11 @@ namespace week06
 
             var request = new GetExchangeRatesRequestBody()
             {
-                currencyNames = "EUR",
-                startDate = "2020-01-01",
-                endDate = "2020-06-30"
+                currencyNames = Convert.ToString(comboBox1.SelectedItem),
+                //currencyNames = "EUR",
+                startDate = Convert.ToString(dateTimePicker1.Value),
+                endDate = Convert.ToString(dateTimePicker2.Value),
+              
             };
 
             var response = mnbService.GetExchangeRates(request);
@@ -85,6 +93,26 @@ namespace week06
             chartArea.AxisY.MajorGrid.Enabled = false;
             chartArea.AxisY.IsStartedFromZero = false;
 
+        }
+
+        private void chartRateData_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshData();
         }
     }
 }
