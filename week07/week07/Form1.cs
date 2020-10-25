@@ -15,7 +15,6 @@ namespace week07
         public Form1()
         {
             InitializeComponent();
-            //proba
         }
     }
 }
