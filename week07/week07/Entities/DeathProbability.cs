@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace week07.Entities
 {
-    public class BirthProbability
+    public class DeathProbability
     {
+        public double Gender { get; set; }
         public double Age { get; set; }
-        public double NbrOfChildren { get; set; }
-        public double ProbabilityofBirth { get; set; }
+        public double ProbabilityOfDeath { get; set; }
     }
 }
