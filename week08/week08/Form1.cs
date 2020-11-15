@@ -53,5 +53,18 @@ namespace week08
                 _toys.Remove(oldestBall);
             }
         }
+
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Factory = new CarFactory();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Factory = new BallFactory();
+        }
     }
 }
