@@ -16,5 +16,9 @@ namespace week08.Entities
             g.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height);
         }
 
+        internal void MoveBall()
+        {
+           
+        }
     }
 }
